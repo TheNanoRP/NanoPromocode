@@ -22,18 +22,26 @@ public class Database {
 
         }
 
-        String dbIp = this.plugin.getConfig().getString("Database.Address");
-        String port = this.plugin.getConfig().getString("Database.Port");
-        String db = this.plugin.getConfig().getString("Database.Database");
+        try {
 
-        String url = "jdbc:mysql://" + dbIp + ":" + port + "/" + db;
-        String user = this.plugin.getConfig().getString("Database.Username");
-        String password = this.plugin.getConfig().getString("Database.Password");
+            String dbIp = this.plugin.getConfig().getString("Database.Address");
+            String port = this.plugin.getConfig().getString("Database.Port");
+            String db = this.plugin.getConfig().getString("Database.Database");
+            String user = this.plugin.getConfig().getString("Database.Username");
+            String password = this.plugin.getConfig().getString("Database.Password");
 
-        this.connection = DriverManager.getConnection(url, user, password);
-        System.out.println("Connected to the practice_code database!");
+            String url = "jdbc:mysql://" + dbIp + ":" + port + "/" + db;
+            this.connection = DriverManager.getConnection(url, user, password);
+            System.out.println("Connected to the practice_code database!");
 
-        return this.connection;
+            return this.connection;
+
+        }catch (SQLException exception){
+            exception.printStackTrace();
+            System.out.println("Unable to connect to the database! Make sure database is configured properly!");
+        }
+
+        return null;
 
     }
 
