@@ -1,8 +1,0 @@
-name: NanoPromocode
-version: '1.3-SNAPSHOT'
-main: me.lorendel.nanopromocode.NanoPromocode
-api-version: '1.20'
-commands:
-  promo:
-    description: USE YOUR PROMO AND DON'T BE HOMO
-    usage: </command>
