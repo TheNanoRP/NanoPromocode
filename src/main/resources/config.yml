@@ -2,11 +2,11 @@
 # Connection to the MySQL database
 
 Database:
-  Address: '195.3.220.103'
-  Port: '3306'
-  Database: 'practice_code'
-  Username: 'lorendel_learning'
-  Password: 'lorendel_13'
+  Address: 'ip'
+  Port: 'port'
+  Database: 'database_name'
+  Username: 'database_username'
+  Password: 'database_password'
 
 # You can use commands and placeholder: %player%
 
